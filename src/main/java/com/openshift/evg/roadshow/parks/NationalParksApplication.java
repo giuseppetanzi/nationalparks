@@ -17,7 +17,10 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration(exclude={ MongoDataAutoConfiguration.class, MongoAutoConfiguration.class})
 public class NationalParksApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
+        String current = new java.io.File( "." ).getCanonicalPath();
+        System.out.println("Current dir:"+current);
         SpringApplication.run(NationalParksApplication.class, args);
     }
 
